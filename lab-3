@@ -1,0 +1,29 @@
+app.jsx.txt
+import { useState } from 'react';
+import './App.css';
+
+function App() {
+  // Anime list state
+  const [animeList] = useState([
+    { id: 1, name: 'Naruto' },
+    { id: 2, name: 'Attack on Titan' },
+    { id: 3, name: 'One Piece' },
+    { id: 4, name: 'Demon Slayer' },
+    { id: 5, name: 'Fullmetal Alchemist' },
+  ]);
+
+  return (
+    <div className="App">
+      <header className="App-header">
+        <h1>My Anime List</h1>
+        <ul>
+          {animeList.map(anime => (
+            <li key={anime.id}>{anime.name}</li>
+          ))}
+        </ul>
+      </header>
+    </div>
+  );
+}
+
+export default App;
